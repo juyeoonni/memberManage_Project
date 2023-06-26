@@ -19,6 +19,7 @@
 	
 	if (sessionPw.equals(pw)) {
 		MemberDTO memberDTO = memberDAO.memberSelect(id);
+		memberDAO.withdralApproval(id);
 		out.println(memberDTO.getName() + "님, 탈퇴 요청 되었습니다.");
 	%>
 		<a href="../home.jsp">메인화면 돌아가기</a>

@@ -19,7 +19,28 @@ public class MemberDTO {
 		this.status = "pending";
 		this.role = "user";
 	}
-
+	
+	
+	
+	public MemberDTO(String name, String id, String pw, String phone, String email, String status, String role) {
+		super();
+		this.name = name;
+		this.id = id;
+		this.pw = pw;
+		this.phone = phone;
+		this.email = email;
+		this.status = status;
+		this.role = role;
+	}
+	
+	public MemberDTO(String id, String name, String pw, String email) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.pw = pw;
+		this.email = email;
+	}
+	
 	public String getName() {
 		return name;
 	}
