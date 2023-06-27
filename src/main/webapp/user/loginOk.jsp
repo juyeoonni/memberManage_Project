@@ -1,10 +1,10 @@
 <%@page import="com.daodto.MemberDAO"%>
 
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -16,17 +16,17 @@ String pw = request.getParameter("pw");
 MemberDAO memberDAO = new MemberDAO();
 
 if(memberDAO.loginCheck(id, pw)){
-    // ·Î±×ÀÎ¿¡ ¼º°øÇÑ °æ¿ì ¼¼¼Ç¿¡ id¿Í pw ÀúÀå
+    // ë¡œê·¸ì¸ì— ì„±ê³µí•œ ê²½ìš° ì„¸ì…˜ì— idì™€ pw ì €ì¥
     session.setAttribute("id", id);
 	session.setAttribute("pw", pw);
     	response.sendRedirect("main.jsp");
 } else {
-    out.println("·Î±×ÀÎ ½ÇÆĞÇÏ¿´½À´Ï´Ù.");
+    out.println("ë¡œê·¸ì¸ ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.");
 %>
 <script>
     setTimeout(function() {
         location.href = 'login.jsp';
-    }, 2000); // 2ÃÊ ÈÄ¿¡ login.jsp·Î ÀÌµ¿
+    }, 2000); // 2ì´ˆ í›„ì— login.jspë¡œ ì´ë™
 </script>
 <%
 }

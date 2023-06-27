@@ -1,17 +1,65 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-top: 0;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="password"] {
+        padding: 5px;
+        width: 50%;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+</style>
 </head>
 <body>
-	<h2>È¸¿ø Å»Åğ ¿äÃ»</h2>
-	
-	<form action="withdrawOk.jsp" method="post">
-	ºñ¹Ğ¹øÈ£ ÀÔ·Â: <input type="password" name="pw"> <br/>
-	<input type="submit" value="Å»Åğ ¿äÃ»">
-	</form>	
+    <div class="container">
+        <h2>íšŒì› íƒˆí‡´ ìš”ì²­</h2>
+
+        <form action="withdrawOk.jsp" method="post">
+            ë¹„ë°€ë²ˆí˜¸ ì…ë ¥: <input type="password" name="pw" id="pw"><br/><br/>
+            
+            <input type="submit" value="íƒˆí‡´ ìš”ì²­">
+        </form>
+    </div>
 </body>
 </html>

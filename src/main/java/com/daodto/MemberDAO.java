@@ -85,7 +85,7 @@ public class MemberDAO {
 				String status = rs.getString("status");
 				String role = rs.getString("role");
 
-				dto = new MemberDTO(name, id, pw, phone, email);
+				dto = new MemberDTO(name, id, pw, phone, email, status, role);
 			}
 
 		} catch (Exception e) {
@@ -175,6 +175,7 @@ public class MemberDAO {
 			pstmt.setString(2, pw);
 			pstmt.setString(3, phone);
 			pstmt.setString(4, email);
+			pstmt.setString(5, id);
 
 			int iResult = pstmt.executeUpdate();
 

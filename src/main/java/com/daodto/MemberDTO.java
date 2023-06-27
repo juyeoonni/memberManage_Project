@@ -39,6 +39,8 @@ public class MemberDTO {
 		this.name = name;
 		this.pw = pw;
 		this.email = email;
+		this.status = "normal";
+		this.role = "user";
 	}
 	
 	public String getName() {

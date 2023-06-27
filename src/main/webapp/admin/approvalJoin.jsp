@@ -8,25 +8,112 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #f2f2f2;
+		text-align: center;
+		padding-top: 50px;
+	}
+
+	h2 {
+		color: #333333;
+	}
+
+	.container {
+		width: 800px;
+		margin: 0 auto;
+		background-color: #ffffff;
+		padding: 30px;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+
+	.container table {
+		width: 100%;
+		border-collapse: collapse;
+		margin-bottom: 20px;
+	}
+
+	.container table th,
+	.container table td {
+		padding: 10px;
+		border: 1px solid #ccc;
+	}
+
+	.container table th {
+		background-color: #f2f2f2;
+	}
+
+	.container form {
+		text-align: left;
+	}
+
+	.container label {
+		display: inline-block;
+		width: 100px;
+		margin-bottom: 10px;
+	}
+
+	.container input[type="text"],
+	.container input[type="submit"] {
+		width: 300px;
+		padding: 8px;
+		font-size: 16px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		box-sizing: border-box;
+	}
+
+	.container input[type="submit"] {
+		background-color: #3498db;
+		color: white;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	.container input[type="submit"]:hover {
+		background-color: #45a049;
+	}
+</style>
 </head>
 <body>
-	<h2>가입 승인 요청 내역</h2>
-	<form action="approvalJoinOk.jsp" method="post">
-	<%
-	MemberDAO memberDAO = new MemberDAO();
-	ArrayList<MemberDTO> dtoList = memberDAO.statusSelect();
-	
-	for (MemberDTO dto : dtoList) {
-		out.println(dto.getName() + ", " + dto.getId() +  ", " + dto.getPhone() + ", " + dto.getEmail() + ", " + dto.getStatus() + "<br>");
-	}
-	%>
-	
-	<br/>
-	가입 승인할 회원의 id를 입력하세요.<br/><br/>
-	아이디: <input type="text" name="id"> <br/><br/>
-	<input type="submit" value="가입 승인">	
-	
-	</form>
-	
-</body>	
+	<div class="container">
+		<h2>가입 승인 요청 내역</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>이름</th>
+					<th>아이디</th>
+					<th>전화번호</th>
+					<th>이메일</th>
+					<th>상태</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%
+				MemberDAO memberDAO = new MemberDAO();
+				ArrayList<MemberDTO> dtoList = memberDAO.statusSelect();
+				
+				for (MemberDTO dto : dtoList) {
+					out.println("<tr>");
+					out.println("<td>" + dto.getName() + "</td>");
+					out.println("<td>" + dto.getId() + "</td>");
+					out.println("<td>" + dto.getPhone() + "</td>");
+					out.println("<td>" + dto.getEmail() + "</td>");
+					out.println("<td>" + dto.getStatus() + "</td>");
+					out.println("</tr>");
+				}
+				%>
+			</tbody>
+		</table>
+		
+		<br/>
+		<form action="approvalJoinOk.jsp" method="post">
+			가입 승인할 회원의 ID를 입력하세요:<br/><br/>
+			<input type="text" name="id" id="id"><br/><br/>
+			<input type="submit" value="가입 승인">
+		</form>
+	</div>
+</body>
 </html>

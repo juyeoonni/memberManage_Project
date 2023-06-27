@@ -1,26 +1,74 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>íšŒì› ì •ë³´ ìˆ˜ì • ì‚¬í•­ ì…ë ¥</title>
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #f2f2f2;
+		text-align: center;
+		padding-top: 50px;
+	}
+
+	h2 {
+		color: #333333;
+	}
+
+	.container {
+		width: 500px;
+		margin: 0 auto;
+		background-color: #ffffff;
+		padding: 30px;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+
+	.container input[type="text"],
+	.container input[type="password"],
+	.container input[type="email"] {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 20px;
+		border: 1px solid #cccccc;
+		border-radius: 5px;
+		font-size: 16px;
+	}
+
+	.container input[type="submit"] {
+		display: inline-block;
+		padding: 12px 24px;
+		font-size: 18px;
+		border: none;
+		border-radius: 5px;
+		background-color: #3498db;
+		color: white;
+		cursor: pointer;
+		margin-top: 20px;
+		transition: background-color 0.3s ease;
+	}
+
+	.container input[type="submit"]:hover {
+		background-color: #45a049;
+	}
+</style>
 </head>
 <body>
-	<h2>È¸¿ø Á¤º¸ ¼öÁ¤ »çÇ× ÀÔ·Â</h2> <br/>
-	
-	<form action="infoModifyOk.jsp" method="post">
-	<%
-	String id = request.getParameter("id");
-	%>
-	
-	ÀÌ¸§: <input type="text" name="name"> <br/>
-	¾ÆÀÌµğ: <input type="text" name="id"> <br/>
-	ºñ¹Ğ¹øÈ£: <input type="password" name="pw"> <br/>
-	ÀÌ¸ŞÀÏ: <input type="email" name="email"> <br/>
-	È¸¿ø»óÅÂ : <input type="text" name="status"> <br/><br/>
-	<input type="submit" value="¼öÁ¤">
-	</form>
-	
+	<div class="container">
+		<h2>íšŒì› ì •ë³´ ìˆ˜ì • ì‚¬í•­ ì…ë ¥</h2> <br/>
+		<form action="infoModifyOk.jsp" method="post">
+			<%
+			String id = request.getParameter("id");
+			%>
+			ì´ë¦„ <input type="text" name="name"> <br/>
+			ì•„ì´ë”” <input type="text" name="id" value="<%= id %>" readonly> <br/>
+			ë¹„ë°€ë²ˆí˜¸ <input type="password" name="pw"> <br/>
+			ì´ë©”ì¼ <input type="email" name="email"> <br/>
+			íšŒì›ìƒíƒœ <input type="text" name="status"> <br/><br/>
+			<input type="submit" value="ìˆ˜ì •">
+		</form>
+	</div>
 </body>
 </html>

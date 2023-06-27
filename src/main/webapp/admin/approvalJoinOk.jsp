@@ -1,24 +1,80 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@page import="com.daodto.*"%>    
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.daodto.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>íšŒì›ê°€ì… ìŠ¹ì¸</title>
+
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #f1f1f1;
+		margin: 0;
+		padding: 0;
+	}
+
+	.container {
+		width: 400px;
+		margin: 100px auto;
+		padding: 20px;
+		background-color: #fff;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+
+	h2 {
+		text-align: center;
+		color: #333;
+	}
+
+	.message {
+		margin-bottom: 20px;
+		text-align: center;
+		font-size: 18px;
+	}
+
+	.button {
+		text-align: center;
+		margin-top: 20px;
+	}
+
+	.button button {
+		padding: 10px 20px;
+		border: none;
+		border-radius: 3px;
+		background-color: #3498db;
+		color: #fff;
+		font-size: 16px;
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+
+	.button button:hover {
+		background-color: #555;
+	}
+</style>
+
 </head>
 <body>
-	<h2>È¸¿ø°¡ÀÔ ½ÂÀÎ</h2>
-	<%
-	String id = request.getParameter("id");
-	
-	MemberDAO memberDAO = new MemberDAO();
-	memberDAO.memberApproval(id);
-	out.println(id + "´ÔÀÇ È¸¿ø°¡ÀÔÀÌ ½ÂÀÎµÇ¾ú½À´Ï´Ù.");
-	%>
-	<br/><br/>
-	<button onclick="window.location.href='AdMain.jsp'">¸ŞÀÎÀ¸·Î</button>
-	
+	<div class="container">
+		<h2>íšŒì›ê°€ì… ìŠ¹ì¸</h2>
+
+		<div class="message">
+			<%
+			String id = request.getParameter("id");
+
+			MemberDAO memberDAO = new MemberDAO();
+			memberDAO.memberApproval(id);
+			out.println(id + "ë‹˜ì˜ íšŒì›ê°€ì…ì´ ìŠ¹ì¸ë˜ì—ˆìŠµë‹ˆë‹¤.");
+			%>
+		</div>
+
+		<div class="button">
+			<button onclick="window.location.href='AdMain.jsp'">ë©”ì¸ìœ¼ë¡œ</button>
+		</div>
+	</div>
 </body>
 </html>

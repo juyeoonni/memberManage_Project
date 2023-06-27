@@ -1,31 +1,68 @@
-<%@page import="java.io.ObjectInputFilter.Status"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.daodto.*"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>íšŒì›ì •ë³´ ìˆ˜ì • ì™„ë£Œ</title>
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #f2f2f2;
+		text-align: center;
+		padding-top: 50px;
+	}
+
+	h2 {
+		color: #333333;
+	}
+
+	.container {
+		width: 300px;
+		margin: 0 auto;
+		background-color: #ffffff;
+		padding: 30px;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+
+	.container a {
+		display: inline-block;
+		padding: 10px 20px;
+		text-decoration: none;
+		font-size: 16px;
+		border-radius: 5px;
+		border: none;
+		background-color: #3498db;
+		color: white;
+		transition: background-color 0.3s ease;
+	}
+
+	.container a:hover {
+		background-color: #45a049;
+	}
+</style>
 </head>
 <body>
-	<h2>È¸¿øÁ¤º¸ ¼öÁ¤ ¿Ï·á</h2>
-	<% 
-	MemberDAO memberDAO = new MemberDAO();
-	
-	String id = (String)session.getAttribute("id");
-	String name = request.getParameter("name");
-	String pw = request.getParameter("pw");
-	String phone = request.getParameter("phone");
-	String email = request.getParameter("email");
-	
-	MemberDTO memberDTO = new MemberDTO(name, id, pw, phone, email);
-	memberDAO.memberUpdate(memberDTO);
-	out.println(memberDAO.memberSelect(id).getName() + "´ÔÀÇ Á¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
-	%>
-	
-	<a href="main.jsp">¸ŞÀÎÈ­¸é µ¹¾Æ°¡±â</a>
-	
-	
+	<div class="container">
+		<h2>íšŒì›ì •ë³´ ìˆ˜ì • ì™„ë£Œ</h2>
+		<% 
+		MemberDAO memberDAO = new MemberDAO();
+
+		String id = (String)session.getAttribute("id");
+		out.println(id);
+		String name = request.getParameter("name");
+		String pw = request.getParameter("pw");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
+
+		MemberDTO memberDTO = new MemberDTO(name, id, pw, phone, email);
+		memberDAO.memberUpdate(memberDTO);
+		out.println(memberDAO.memberSelect(id).getName() + "ë‹˜ì˜ ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
+		%>
+		<br><br>
+		<a href="main.jsp">ë©”ì¸í™”ë©´ ëŒì•„ê°€ê¸°</a>
+	</div>
 </body>
 </html>

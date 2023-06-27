@@ -1,19 +1,71 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>íšŒì›ì •ë³´ ìˆ˜ì •</title>
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #f2f2f2;
+		text-align: center;
+		padding-top: 50px;
+	}
+
+	h2 {
+		color: #333333;
+	}
+
+	.container {
+		width: 300px;
+		margin: 0 auto;
+		background-color: #ffffff;
+		padding: 30px;
+		border-radius: 5px;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	}
+
+	.container input[type="text"],
+	.container input[type="password"],
+	.container input[type="email"] {
+		display: block;
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 20px;
+		border: 1px solid #cccccc;
+		border-radius: 5px;
+		font-size: 16px;
+	}
+
+	.container input[type="submit"] {
+		display: block;
+		width: 100%;
+		padding: 12px;
+		font-size: 18px;
+		border: none;
+		border-radius: 5px;
+		background-color: #3498db;
+		color: white;
+		cursor: pointer;
+		margin-top: 20px;
+		transition: background-color 0.3s ease;
+	}
+
+	.container input[type="submit"]:hover {
+		background-color: #45a049;
+	}
+</style>
 </head>
 <body>
-<form action="modifyOk.jsp" method="post">
-	<h2>È¸¿øÁ¤º¸ ¼öÁ¤</h2> <br />
-	ÀÌ¸§: <input type="text" name="name"> <br />
-	ºñ¹Ğ¹øÈ£: <input type="password" name="pw"> <br />  
-	ÀüÈ­¹øÈ£: <input type="text" name="phone"> <br />
-	ÀÌ¸ŞÀÏ: <input type="email" name="email"> <br />
-	<input type="submit" value="Àü¼Û">
-</form>
+	<div class="container">
+		<form action="modifyOk.jsp" method="post">
+			<h2>íšŒì›ì •ë³´ ìˆ˜ì •</h2> <br>
+			ì´ë¦„ <input type="text" name="name"> <br>
+			ë¹„ë°€ë²ˆí˜¸ <input type="password" name="pw"> <br>  
+			ì „í™”ë²ˆí˜¸ <input type="text" name="phone"> <br>
+			ì´ë©”ì¼ <input type="email" name="email"> <br>
+			<input type="submit" value="ì „ì†¡">
+		</form>
+	</div>
 </body>
 </html>

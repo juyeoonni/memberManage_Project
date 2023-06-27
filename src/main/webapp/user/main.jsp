@@ -1,30 +1,69 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-    
-<%@page import="com.daodto.*"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="com.daodto.*" %>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>íšŒì› ì •ë³´</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding-top: 50px;
+}
+
+h2 {
+  color: #333333;
+}
+
+.container {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.container a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.container a:hover {
+  background-color: #45a049;
+}
+</style>
 </head>
 <body>
-	<%
-	String id = (String)session.getAttribute("id");
+  <div class="container">
+    <h2>íšŒì› ì •ë³´</h2>
+    <hr>
+    <h3>
+    <%
+    String id = (String)session.getAttribute("id");
 	out.println(id);
 	
 	String pw = (String)session.getAttribute("pw");
-	
-	MemberDAO memberDAO = new MemberDAO();
-	out.println(memberDAO.memberSelect(id).getName() + " È¸¿ø´Ô, È¯¿µÇÕ´Ï´Ù!");
-	%>
-	
-	<a href="logout.jsp">·Î±×¾Æ¿ô</a> <br />
-	<a href="modify.jsp">È¸¿øÁ¤º¸ ¼öÁ¤</a> <br />
-	<a href="withdraw.jsp">È¸¿øÅ»Åğ</a> <br />
-	
-	
-	
+    
+    MemberDAO memberDAO = new MemberDAO();
+    out.println(memberDAO.memberSelect(id).getName() + " íšŒì›ë‹˜, í™˜ì˜í•©ë‹ˆë‹¤!"); 
+    %>
+    </h3>
+    <br>
+    <a href="modify.jsp">íšŒì›ì •ë³´ ìˆ˜ì •</a> <br>
+    <a href="logout.jsp">ë¡œê·¸ì•„ì›ƒ</a> <br>
+    <a href="withdraw.jsp">íšŒì›íƒˆí‡´</a> <br>
+  </div>
 </body>
 </html>

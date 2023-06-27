@@ -1,16 +1,48 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>íšŒì›ê´€ë¦¬ í”„ë¡œê·¸ë¨</title>
+<style>
+	body {
+		font-family: Arial, sans-serif;
+		background-color: #f2f2f2;
+		text-align: center;
+	}
+
+	h2 {
+		color: #333333;
+	}
+
+	.button-container {
+		margin-top: 50px;
+	}
+
+	.button-container button {
+		display: inline-block;
+		padding: 10px 20px;
+		font-size: 18px;
+		border-radius: 5px;
+		border: none;
+		background-color: #3a86ff; /* í•˜ëŠ˜ìƒ‰ */
+		color: white;
+		text-align: center;
+		cursor: pointer;
+		margin-right: 10px;
+	}
+
+	.button-container button:hover {
+		background-color: #1660bf; /* ì§„í•œ í•˜ëŠ˜ìƒ‰ */
+	}
+</style>
 </head>
 <body>
-	<h2>È¸¿ø°ü¸® ÇÁ·Î±×·¥</h2>
-	
-		<button type="button" onclick="location.href='user/login.jsp'">»ç¿ëÀÚ ¸ğµå</button> <br/><br/>
-		<button type="button" onclick="location.href='admin/AdLogin.jsp'">°ü¸®ÀÚ ¸ğµå</button>
-
+	<h2>íšŒì›ê´€ë¦¬ í”„ë¡œê·¸ë¨</h2>
+	<p>í™˜ì˜í•©ë‹ˆë‹¤! ì‚¬ìš©ì ëª¨ë“œë¥¼ ì„ íƒí•˜ì„¸ìš”!</p>
+	<div class="button-container">
+		<button type="button" onclick="location.href='user/login.jsp'">ì‚¬ìš©ì ëª¨ë“œ</button>
+		<button type="button" onclick="location.href='admin/AdLogin.jsp'">ê´€ë¦¬ì ëª¨ë“œ</button>
+	</div>
 </body>
 </html>
